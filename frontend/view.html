@@ -1,0 +1,14 @@
+<h2>All Students</h2>
+<ul id="list"></ul>
+
+<script>
+fetch('http://localhost:3000/students')
+.then(res => res.json())
+.then(data => {
+    let output = "";
+    data.forEach(s => {
+        output += `<li>${s.name} - ${s.age}</li>`;
+    });
+    document.getElementById("list").innerHTML = output;
+});
+</script>
